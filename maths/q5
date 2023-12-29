@@ -1,0 +1,27 @@
+void print_divisors(int number) {
+    
+
+    int limit = sqrt(number);
+    vector<int> divisors;
+
+    
+    for (int i = 1; i <= limit; ++i) {
+        if (number % i == 0) {
+            divisors.push_back(i);
+            if (i != number / i) {
+                
+                divisors.push_back(number / i);
+            }
+        }
+    }
+
+    
+    std::sort(divisors.begin(), divisors.end());
+
+   
+    for (int divisor : divisors) {
+        std::cout << divisor << " ";
+    }
+
+    
+}

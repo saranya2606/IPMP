@@ -1,0 +1,17 @@
+bool checkArmstrong(int n) {
+    if (n < 0) {
+        // Armstrong numbers are defined for non-negative integers.
+        return false;
+    }
+
+    long long int sum = 0;
+    long long int k = n;
+
+    while (k > 0) {
+        int d = k % 10;
+        sum += d * d * d;
+        k = k / 10;
+    }
+
+    return (sum == n);
+}
